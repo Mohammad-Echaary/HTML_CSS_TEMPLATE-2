@@ -557,6 +557,10 @@ header .points div:nth-child(2) {
     margin: 2rem auto;
 }
 
+.portfolio .video p {
+    color: white;
+}
+
 .about .content {
     background-image: url("../photos/about.jpg");
     background-position: center;
