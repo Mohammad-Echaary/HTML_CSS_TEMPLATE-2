@@ -1,0 +1,77 @@
+.portfolio {
+	.links {
+		display: flex;
+		width: fit-content;
+		margin: 4rem auto;
+		li a {
+			padding: 0.7rem 1.5rem;
+			color: black;
+			@include prefixes(transition, 0.3s);
+			border: 1px solid $mainColor;
+			&:hover,
+			&.active {
+				background-color: $mainColor;
+				color: white;
+			}
+		}
+	}
+	.container {
+		@include grid(300px,1rem);
+		overflow: hidden;
+		.box {
+			@include prefixes(border-radius, 5px);
+			overflow: hidden;
+			position: relative;
+			cursor: pointer;
+			img {
+				width: 100%;
+				@include prefixes(transition, 0.4s);
+				@include prefixes(filter, blur(2px));
+				height: 300px;
+			}
+			.text {
+				@include abs(null, null, -100%, 0, 100%);
+				padding: 1rem;
+				text-align: center;
+				@include prefixes(transition, 0.4s);
+				background-color: white;
+                h3 {
+                    color: $mainColor;
+                    margin-top: .5rem;
+                }
+			}
+			&:hover {
+				.text {
+					bottom: 0;
+				}
+				img {
+					@include prefixes(transform, rotate(4deg) scale(1.2));
+					@include prefixes(filter, blur(0));
+				}
+			}
+		}
+	}
+    .video {
+		@extend %photo;
+		background-image: url("../../../photos/header.jpg");
+		padding: 5% 0;
+		@include flexCenter();
+        .content {
+			background-color: rgba($mainColor, .5);
+			padding: 2rem;
+			position: relative;
+            color: white;
+            text-align: center;
+        }
+		a {
+			color: white;
+			background-color: black;
+			padding: 1rem 2rem;
+			width: fit-content;
+			margin: 2rem auto;
+		}
+		p {
+			color: white;
+		}
+    }
+}

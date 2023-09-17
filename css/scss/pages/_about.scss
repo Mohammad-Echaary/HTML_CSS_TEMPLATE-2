@@ -1,0 +1,153 @@
+.about {
+	.content {
+        @extend %photo;
+		background-image: url('../../../photos/about.jpg');
+		padding: 6rem 15px;
+		.container {
+			position: relative;
+			background-color: rgba($mainColor, 0.5);
+			display: grid;
+			@include grid(230px);
+			@include maxBreakPoint(sm) {
+				@include grid(330px);
+			}
+			.box {
+				text-align: center;
+				padding: 3rem;
+				color: white;
+				i {
+					@include flexCenter();
+					@include rounded(60px);
+					margin: 0 auto;
+					font-size: 2rem;
+					background-color: black;
+				}
+				h1 {
+					font-size: 3rem;
+				}
+				p {
+					color: white;
+				}
+			}
+		}
+	}
+	.skills {
+		@include flex(5rem, wrap);
+		align-items: start;
+		margin-top: 6rem;
+		margin-bottom: 6rem;
+		.box {
+			text-align: center;
+			@include breakPoint(md) {
+				flex-basis: 45%;
+			}
+			h3 {
+				text-transform: uppercase;
+				font-weight: 400;
+				font-size: 1.5rem;
+			}
+			p {
+				margin-top: 2rem;
+				margin-bottom: 2rem;
+			}
+			.users {
+				@include flex(2rem);
+				@include breakPoint(m) {
+					flex-direction: column;
+					align-items: center;
+					margin-bottom: 4rem;
+				}
+				.profil {
+					@include rounded(5.2rem);
+				}
+				.text {
+					padding: 1rem 0rem;
+					text-align: left;
+					border-bottom: 1px solid #b7b6b6;
+					p {
+						color: #3a3a3a;
+						margin-bottom: 0.5rem;
+					}
+					h5 {
+						text-align: right;
+						color: #6d6c6c;
+						font-weight: 300;
+						margin: 0;
+					}
+				}
+			}
+			.points {
+				display: flex;
+				width: fit-content;
+				column-gap: 0.3rem;
+				margin: 2rem auto;
+				div {
+					@include rounded(1.2rem);
+					border: 1px solid $mainColor;
+					&:nth-child(2) {
+						background-color: $mainColor;
+					}
+				}
+			}
+			.stats {
+				li {
+					margin-bottom: 1rem;
+					p {
+						margin-bottom: 0.6rem;
+						text-align: left;
+						color: black;
+						text-transform: uppercase;
+						font-size: 1rem;
+					}
+					.hole {
+						height: 2.2rem;
+						background-color: #cecccc;
+						position: relative;
+                        .number {
+                            position: absolute;
+                            height: 100%;
+                            top: 0;
+                            left: 0;
+                            background-color: $mainColor;
+                            z-index: 10;
+                            &::before {
+                                @include absPseudo(0,0,null,null,50px,auto,2,attr(data-size));
+                                @include prefixes(border-radius,5px);
+                                @include prefixes(transform,translate(50%,-150%));
+                                color: white;
+                                background-color: black;
+                                padding: .3rem 0;
+                                text-align: center;
+                            }
+                            &::after {
+                                position: absolute;
+                                content: "";
+                                @include arrow(0,0,null,null,10px,black);
+                                @include prefixes(transform,translate(50%,-90%));
+                            }
+                        }
+					}
+				}
+			}
+		}
+	}
+    .quotes {
+        @extend %photo;
+        background-image: url("../../../photos/quote.jpg");
+        text-align: center;
+        margin-bottom: 6rem;
+        .quote {
+            padding: 8rem 0;
+            color: white;
+            position: relative;
+            q {
+                font-size: 2.2rem;
+                position: relative;
+                font-weight: 300;
+                p {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
+}

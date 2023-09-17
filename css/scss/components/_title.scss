@@ -1,0 +1,39 @@
+.header {
+	margin: 3rem auto;
+	max-width: 600px;
+	text-align: center;
+	padding: 4rem 0;
+	h1 {
+		text-transform: uppercase;
+		font-weight: 400;
+		font-size: 2.6rem;
+		color: $mainColor;
+	}
+	.line {
+		margin: 1rem auto 1.5rem;
+		width: 120px;
+		height: 2px;
+		background-color: $mainColor;
+		position: relative;
+		&::after {
+			@include absPseudo(50%, null, null, 0, 0.8rem, 0.8rem, 1);
+			@include prefixes(transform, translateY(-50%));
+			@include prefixes(border-radius, 50%);
+			background-color: $mainColor;
+			border: 1px solid #a2a2a2;
+			@include prefixes(animation, line 5s linear infinite);
+			@include animationMixin(line) {
+				0%,
+				100% {
+					left: 0;
+				}
+				50% {
+					left: calc(100% - 0.8rem);
+				}
+			}
+		}
+	}
+	p {
+		color: #a2a2a2;
+	}
+}

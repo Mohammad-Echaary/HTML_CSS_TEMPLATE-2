@@ -1,0 +1,13 @@
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 1.7rem;
+    column-gap: .5rem;
+    color: $mainColor;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    h2 {
+        font-family: 'Dancing Script', cursive;
+        text-transform: capitalize;
+    }
+}

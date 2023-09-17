@@ -1,0 +1,4 @@
+.over {
+    @include abs(0,null,null,0,100%,100%);
+    background-color: rgba(0, 0, 0 , .7);
+}

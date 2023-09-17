@@ -1,0 +1,71 @@
+.header-section {
+	@include flex();
+	position: relative;
+	&::after {
+		@include absPseudo(null, null, 0, 15px, calc(100% - 30px), 1px);
+		background-color: #807d7d;
+		z-index: 1;
+	}
+	nav {
+		@include flex();
+		justify-content: flex-end;
+		column-gap: 2rem;
+		color: white;
+		ul {
+			display: flex;
+			position: relative;
+			z-index: 10;
+			@include breakPoint(m) {
+				display: none;
+			}
+			li a {
+				padding: 1.7rem 0.8rem;
+				position: relative;
+				@include prefixes(transition, 0.3s);
+				color: white;
+				@include breakPoint(m) {
+					padding: 0.7rem;
+				}
+				&::after {
+					@include absPseudo(null, null, -3px, 0, 100%, 1px);
+                    z-index:100;
+					background-color: transparent;
+					transition: 0.3s;
+				}
+				&:hover,
+				&.active {
+					color: $mainColor;
+					&::after {
+						background-color: $mainColor;
+					}
+				}
+			}
+		}
+		.bar {
+			display: none;
+			font-size: 1.4rem;
+			cursor: pointer;
+			@include breakPoint(m) {
+				display: block;
+				&.active {
+					color: $mainColor;
+					+ ul {
+						display: flex;
+						flex-direction: column;
+						width: 100%;
+						left: 0;
+						background-color: black;
+						position: absolute;
+						top: 100%;
+					}
+				}
+			}
+		}
+		.search i {
+			display: block;
+			padding: 0.2rem 0rem 0.2rem 1rem;
+			border-left: 1px solid white;
+			font-size: 1.4rem;
+		}
+	}
+}

@@ -1,0 +1,42 @@
+.contact {
+    .container {
+        display: flex;
+        gap: 3rem;
+        margin-bottom: 5rem;
+        @include breakPoint(m){
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+        form {
+            @include flex(1.7rem);
+            flex-basis: 70%;
+            flex-direction: column;
+            >* {
+                padding: 1rem;
+                border: 1px solid #c2c0c0;
+                &::placeholder {
+                    text-transform: capitalize;
+                }
+            }
+            button {
+                margin:0 0 2rem auto;
+            }
+        }
+        .box {
+            @include breakPoint(m){
+                display: flex;
+                justify-content: center;
+            }
+                gap: 3rem;
+                .text {
+                    margin-bottom: 4rem;
+                    h4 {
+                        text-transform: uppercase;
+                        margin-bottom: 2rem;
+                        font-size: 1.6rem;
+                        font-weight: 300;
+                    }
+                }
+        }
+    }
+}

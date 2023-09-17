@@ -1,0 +1,32 @@
+footer {
+    @extend %photo;
+    background-image: url("../../../photos/footer.jpg");
+    height: 450px;
+    .box {
+        position: relative;
+        height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        .social-media {
+            h2 {
+                text-transform: uppercase;
+                font-weight: 300;
+                padding: 1rem .7rem;
+                border-bottom: 1px solid white;
+                margin-bottom: 2rem;
+            }
+        }
+        ul {
+            display: flex;
+            justify-content: center;
+            gap: 1.6rem;
+        }
+        p {
+            word-spacing: 3px;
+            color: white;
+        }
+    }
+}
